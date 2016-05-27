@@ -15,6 +15,11 @@
 
 </head>
 <body>  
+  <div id="questionBlock">
+    <h1>Question 1</h1>
+    <h2>What kind of question would you like to answer?</h2>
+  </div>
+    
   <div id="leftPart">
     <div id="profilePic" class="img-rounded"></div>
 
@@ -23,11 +28,6 @@
 
 
   <div id="rightPart">
-    <div id="questionBlock">
-      <h1>Question 1</h1>
-      <h2>What kind of question would you like to answer?</h2>
-    </div>
-
     <div id="answerBlock">
       <div class="answerPart">
         <p class="answerText">Yes</p>
