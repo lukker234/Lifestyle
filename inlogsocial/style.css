@@ -1,0 +1,142 @@
+@font-face {
+  font-family: 'Radio';
+  src: url('font/radio1875.ttf') format('truetype');
+}
+
+html{
+	overflow: hidden;
+	color: #78818A!important;
+}
+
+body{
+	background-color: #323232!important;
+	color: #78818A!important;
+	font-family: 'Radio'!important;
+	font-size: 20px;
+    letter-spacing: 5px!important;
+}
+
+h4{
+	text-align: center;
+	    margin-top: 200px;
+    position: absolute;
+    top: 0;
+    left: 130px;
+}
+
+.imagespersonal{
+    width: 35%;
+    margin-top: 150px;
+    margin-left: 300px;
+    position: absolute;
+}
+
+.Textpersonal{
+    margin-top: 350px;
+    margin-left: 350px;
+    position: absolute;
+}
+
+.agepersonal{
+    margin-top: 550px;
+    margin-left: 350px;
+    position: absolute;
+    width: 300px;
+    border-bottom: 2px solid #78818A;
+    padding-bottom: 5px;
+}
+
+.relpersonal{
+    margin-top: 650px;
+    margin-left: 350px;
+    position: absolute;
+    width: 300px;
+    border-bottom: 2px solid #78818A;
+    padding-bottom: 5px;
+}
+
+.edupersonal{
+    margin-top: 650px;
+    margin-left: 680px;
+    position: absolute;
+    width: 300px;
+    border-bottom: 2px solid #78818A;
+    padding-bottom: 5px;
+}
+
+.ideopersonal{
+    margin-top: 670px;
+    margin-left: 1010px;
+    position: absolute;
+    width: 300px;
+    border-bottom: 2px solid #78818A;
+    padding-bottom: 5px;
+}
+
+.woonpersonal{
+    margin-top: 530px;
+    margin-left: 680px;
+    position: absolute;
+    width: 300px;
+    border-bottom: 2px solid #78818A;
+    padding-bottom: 5px;
+}
+
+.friendpersonal{
+    margin-top: 550px;
+    margin-left: 1010px;
+    position: absolute;
+    width: 300px;
+    border-bottom: 2px solid #78818A;
+    padding-bottom: 5px;
+}
+
+.imagespersonal img{
+    width: 150px;
+    margin-left: 20px;
+}
+
+#scanveld{
+	width: 70%;
+	/* Safari */
+-webkit-transform: rotate(-90deg);
+
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+
+.finger-scan{
+	-webkit-transform: rotate(-90deg);
+
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    opacity: .5;
+    margin-top: 300px;
+    width: 50%;
+    margin-left: 70px;
+}

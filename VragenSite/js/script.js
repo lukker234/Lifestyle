@@ -3,7 +3,7 @@ $( document ).ready(function() {
 
   $( ".answerPart" ).click(function(){
   	console.log("Clicked");
-  	console.log($( ".answerPart p" ).text());
+  	console.log($(this).text());
 
   	$( "#q1" ).delay( 500 ).fadeOut( "slow", function() {});
  });
