@@ -51,7 +51,7 @@ body{
 	float: left;
 }
 #questionBlock{
-	width: 80%;
+	width: 800px;
 	text-align: center;
 }
 #questionBlock h1{
@@ -69,7 +69,7 @@ body{
 
 }
 .answerPart{
-	width: 932px; height: 172px;
+	width: 800px; height: 148px;
 	margin-bottom: 16px;
 	background-image: url(../img/border.png);
 	background-size: contain;
