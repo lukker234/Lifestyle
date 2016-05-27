@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Radio';
+  src: url('font/radio1875.ttf') format('truetype');
+}
+
+html{
+	overflow: hidden;
+	color: #78818A!important;
+}
+
+body{
+	background-color: #323232!important;
+	color: #78818A!important;
+	font-family: 'Radio'!important;
+	font-size: 20px;
+}
+
+h4{
+	text-align: center;
+	    margin-top: 200px;
+    position: absolute;
+    top: 0;
+    left: 130px;
+}
+}
+
+#scanveld{
+	width: 70%;
+	/* Safari */
+-webkit-transform: rotate(-90deg);
+
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 200px;
+}
+
+
+.finger-scan{
+	-webkit-transform: rotate(-90deg);
+
+/* Firefox */
+-moz-transform: rotate(-90deg);
+
+/* IE */
+-ms-transform: rotate(-90deg);
+
+/* Opera */
+-o-transform: rotate(-90deg);
+
+/* Internet Explorer */
+filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    opacity: .5;
+    margin-top: 300px;
+    width: 50%;
+    margin-left: 70px;
+}
