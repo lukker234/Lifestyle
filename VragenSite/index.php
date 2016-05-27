@@ -15,36 +15,40 @@
 
 </head>
 <body>  
-  <div id="questionBlock">
-    <h1>Question 1</h1>
-    <h2>What kind of question would you like to answer?</h2>
-  </div>
-    
-  <div id="leftPart">
-    <div id="profilePic" class="img-rounded"></div>
+  <div id="q1">
+    <div id="questionBlock">
+      <h1>Question 1</h1>
+      <h2>What kind of question would you like to answer?</h2>
+    </div>
 
-    <div id="fingerPic" class="img-rounded"></div>
-  </div>
+    <div id="leftPart">
+      <div id="profilePic" class="img-rounded"></div>
+
+      <div id="fingerPic" class="img-rounded"></div>
+    </div>
 
 
-  <div id="rightPart">
-    <div id="answerBlock">
-      <div class="answerPart">
-        <p class="answerText">Yes</p>
+    <div id="rightPart">
+      <div id="answerBlock">
+          <div class="answerPart">
+            <p class="answerText">Yes</p>
+          </div>
+
+          <div class="answerPart">
+            <p class="answerText">No</p>
+          </div>
+
+          <div class="answerPart">
+            <p class="answerText">Shit</p>
+          </div>
+
       </div>
-      <div class="answerPart">
-        <p class="answerText">No</p>
-      </div>
-      <div class="answerPart">
-        <p class="answerText">Shit</p>
-      </div>
-
     </div>
   </div>
 
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
