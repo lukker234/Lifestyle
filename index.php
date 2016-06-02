@@ -26,6 +26,11 @@
 		    </video>
 		</div>
 
+		<img src="img/fingerprint.png" id="fingerprint" style="    position: absolute;
+    top: 530px;
+    right: 17%;
+    width: 15%;">
+
 		<!-- jQuery -->
 		<script src="//code.jquery.com/jquery.js"></script>
 		<!-- Bootstrap JavaScript -->

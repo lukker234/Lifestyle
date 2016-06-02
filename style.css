@@ -20,6 +20,9 @@ body{
 	display:none;
 }
 
+#fingerprint{
+	display: none;
+}
 #q2{
 	display: none;
 }
