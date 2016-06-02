@@ -20,6 +20,7 @@
 			<img src="img/fingerPlaceholder.png">
 		</div>
 		<p class="Textpersonal">Name  :  John Janssen</p>
+		<p class="Textpersonal" style="margin-left: 1000px; margin-top: 300px; font-size: 40px;">95 KG</p>
 
 		<p class="agepersonal">Age  :  43</p>
 		<p class="relpersonal">Relationship  :  Single</p>

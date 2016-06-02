@@ -3,9 +3,9 @@ $( document ).ready(function() {
 
   $( "#videobg2" ).delay( 7000 ).fadeIn( "slow", function() {});
 
-var video = document.getElementById('scanfinger');
-video.addEventListener('click',function(){
-  video.play();
-},false);
+// var video = document.getElementById('scanfinger');
+// video.addEventListener('click',function(){
+//   video.play();
+// },false);
 
 });
