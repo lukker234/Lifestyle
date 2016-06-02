@@ -48,6 +48,7 @@ body{
 #rightPart{
 	width: 60%; min-height: 200px;
 	float: left;
+	margin-top: 50px;
 }
 
 
@@ -85,4 +86,22 @@ body{
 .answerText{
 	padding-left: 60px;
 	padding-top: 32px;
+}
+#q2{
+	display: none;
+}
+#q3{
+	display: none;
+}
+#q4{
+	display: none;
+}
+#q5{
+	display: none;
+}
+#q6{
+	display: none;
+}
+#q7{
+	display: none;
 }

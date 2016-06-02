@@ -12,6 +12,9 @@ body{
     bottom: 0; left: 0;
     margin: auto; 
 }
+.rightPart{
+	margin-top: 50px;
+}
 
 #videobg2{
 	display:none;

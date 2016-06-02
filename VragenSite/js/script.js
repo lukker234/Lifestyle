@@ -5,14 +5,18 @@ var answer4;
 var answer5;
 var answer6;
 var answer7;
+var answer8;
+var answer9;
 
-var quetion1;
-var quetion2;
-var quetion3;
-var quetion4;
-var quetion5;
-var quetion6;
-var quetion7;
+var question1;
+var question2;
+var question3;
+var question4;
+var question5;
+var question6;
+var question7;
+var question8;
+var question9;
 
 $( document ).ready(function() {
 	console.log("JS Connected");
@@ -32,7 +36,6 @@ $( document ).ready(function() {
   	$( "#q1" ).delay( 500 ).fadeOut( "slow", function() {});
 
     $("#q2 h1").append("Question 2");
-    $("#q2 #answerInner2").append(answer1);
   	$( "#q2" ).delay( 1500 ).fadeIn(  "slow", function() {});
     /*$("#answer1").append(answer1);*/
   });
@@ -122,8 +125,48 @@ $( document ).ready(function() {
 
     $( "#q7" ).delay( 500 ).fadeOut( "slow", function() {});
 
-    $("#q8 h1").append("Question 5");
+    $("#q8 h1").append("Question 8");
     $( "#q8" ).delay( 1500 ).fadeIn(  "slow", function() {});
+  });
+
+  $( "#q8 .answerPart" ).click(function(){
+    console.log("Clicked");
+    console.log($("#q8 h2").text());
+    console.log($(this).text());
+
+    question8 = $("#q8 h2").text();
+    answer8 =   $(this).text();
+
+    $( "#q8" ).delay( 500 ).fadeOut( "slow", function() {});
+
+    $("#q9 h1").append("Question 9");
+    $( "#q9" ).delay( 1500 ).fadeIn(  "slow", function() {});
+  });
+
+  $( "#q9 .answerPart" ).click(function(){
+    console.log("Clicked");
+    console.log($("#q9 h2").text());
+    console.log($(this).text());
+
+    question9 = $("#q9 h2").text();
+    answer9 =   $(this).text();
+
+    $( "#q9" ).delay( 500 ).fadeOut( "slow", function() {});
+
+    $("#q10 h1").append("Done");
+    $( "#q10" ).delay( 1500 ).fadeIn(  "slow", function() {});
+
+    $("#finalRecord1").append(answer1);
+    $("#finalRecord2").append(answer2);
+    $("#finalRecord3").append(answer3);
+    $("#finalRecord4").append(answer4);
+
+    $("#finalRecord5").append(answer5);
+    $("#finalRecord6").append(answer6);
+    $("#finalRecord7").append(answer7);
+    $("#finalRecord8").append(answer8);
+
+    $("#finalRecord9").append(answer9);
   });
 
 
