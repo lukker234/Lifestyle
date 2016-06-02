@@ -19,9 +19,8 @@
 		        <source src="video/finger-scan-loading.mp4" type="video/mp4">
 		    </video>
 		</div>
-		<h4 style="    margin-top: 20%;
-    width: 80%;
-    margin-left: 10%;">Place finger below</h4>
+		<h4 style="margin-top: 20%; width: 80%; margin-left: 10%;">Place finger below</h4>
+		<button id="button_click"></button>
 
 
 		<!-- jQuery -->
