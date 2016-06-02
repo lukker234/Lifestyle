@@ -31,15 +31,77 @@
     <div id="rightPart">
       <div id="answerBlock">
           <div class="answerPart">
-            <p class="answerText">Yes</p>
+            <p class="answerText" id="answerInner1">A simple one</p>
           </div>
 
           <div class="answerPart">
-            <p class="answerText">No</p>
+            <p class="answerText" id="answerInner2">None</p>
           </div>
 
           <div class="answerPart">
-            <p class="answerText">Shit</p>
+            <p class="answerText" id="answerInner3">No idea</p>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div hidden id="q2">
+    <div id="questionBlock">
+      <h1><span id='answer1'></span></h1>
+      <h2>What was your answer the last question?</h2>
+    </div>
+
+    <div id="leftPart">
+      <div id="profilePic" class="img-rounded"></div>
+
+      <div id="fingerPic" class="img-rounded"></div>
+    </div>
+
+
+    <div id="rightPart">
+      <div id="answerBlock">
+          <div class="answerPart">
+            <p class="answerText" id="answerInner1">I dont know</p>
+          </div>
+
+          <div class="answerPart">
+            <p class="answerText" id="answerInner2"></p>
+          </div>
+
+          <div class="answerPart">
+            <p class="answerText" id="answerInner3">9</p>
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div hidden id="q3">
+    <div id="questionBlock">
+      <h1> </h1>
+      <h2>What is our groups leader?</h2>
+    </div>
+
+    <div id="leftPart">
+      <div id="profilePic" class="img-rounded"></div>
+
+      <div id="fingerPic" class="img-rounded"></div>
+    </div>
+
+
+    <div id="rightPart">
+      <div id="answerBlock">
+          <div class="answerPart">
+            <p class="answerText" id="answerInner1">Hodor</p>
+          </div>
+
+          <div class="answerPart">
+            <p class="answerText" id="answerInner2">Sjoerd</p>
+          </div>
+
+          <div class="answerPart">
+            <p class="answerText" id="answerInner3">Nobody!</p>
           </div>
 
       </div>
