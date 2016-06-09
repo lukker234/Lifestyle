@@ -1,7 +1,8 @@
 <?php 
-$shizzle = "";
+
 if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer3']) && isset($_POST['answer4']) && isset($_POST['answer5'])){
-  /*$value1 = $_POST['answer1'];
+  echo $shizzle = "yay het werkt!";
+  /*$value1 = $_POST['answer1']; 
   $value2 = $_POST['answer2'];
   $value3 = $_POST['answer3'];
   $value4 = $_POST['answer4'];
