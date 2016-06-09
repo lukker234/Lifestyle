@@ -2,16 +2,23 @@
 
 if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer3']) && isset($_POST['answer4']) && isset($_POST['answer5'])){
   echo $shizzle = "yay het werkt!";
-  /*$value1 = $_POST['answer1']; 
+
+  $value1 = $_POST['answer1']; 
   $value2 = $_POST['answer2'];
   $value3 = $_POST['answer3'];
   $value4 = $_POST['answer4'];
   $value5 = $_POST['answer5'];
 
+  strip_tags($value1);
+  strip_tags($value2);
+  strip_tags($value3);
+  strip_tags($value4);
+  strip_tags($value5);
+
   $servername = "localhost";
-  $username = "username";
-  $password = "password";
-  $dbname = "myDB";
+  $username = "root";
+  $password = "";
+  $dbname = "lifestyle";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -20,15 +27,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO table_name VALUES (UserId, $value1, $value2, $value3, $value4, $value5)";
+$sql = "INSERT INTO questionanswer VALUES ($value1, $value2, $value3, $value4, $value5)";
 
-if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+$stmt = $conn->prepare("INSERT INTO questionanswer (answer1, `answer2`, `answer3`, `answer4`, `answer5`) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss" ,$value1, $value2, $value3, $value4, $value5);
 
-$conn->close();*/
+$stmt->execute();
+
+$conn->close();
 
 }
  ?>
