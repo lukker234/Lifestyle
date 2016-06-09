@@ -93,11 +93,21 @@ $( document ).ready(function() {
     $("#q10 h1").append("Klaar");
     $( "#q10" ).delay( 1500 ).fadeIn(  "slow", function() {});
 
-    $("#finalRecord1").append(answer1);
+    /*$("#finalRecord1").append(answer1);
     $("#finalRecord2").append(answer2);
     $("#finalRecord3").append(answer3);
     $("#finalRecord4").append(answer4);
-    $("#finalRecord5").append(answer5);
+    $("#finalRecord5").append(answer5);*/
+
+    $('#form').submit(function(eventObj) {
+      $(this).append('<input type="hidden" name="answer1" value="'+ answer1 +'" /> ');
+      $(this).append('<input type="hidden" name="answer2" value="'+ answer2 +'" /> ');
+      $(this).append('<input type="hidden" name="answer3" value="'+ answer3 +'" /> ');
+      $(this).append('<input type="hidden" name="answer4" value="'+ answer4 +'" /> ');
+      $(this).append('<input type="hidden" name="answer5" value="'+ answer5 +'" /> ');
+      return true;
+    });
+
 
     /*$.post("index.php" , {question: question1, answer: answer1} ,function(data){
         alert( "Data Loaded: " + data );

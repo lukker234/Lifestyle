@@ -1,12 +1,7 @@
 <?php 
-$answer1 = "";
-$answer2 = "";
-$answer3 = "";
-$answer4 = "";
-$answer5 = "";
-
+$shizzle = "";
 if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer3']) && isset($_POST['answer4']) && isset($_POST['answer5'])){
-  $value1 = $_POST['answer1'];
+  /*$value1 = $_POST['answer1'];
   $value2 = $_POST['answer2'];
   $value3 = $_POST['answer3'];
   $value4 = $_POST['answer4'];
@@ -32,7 +27,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-$conn->close();
+$conn->close();*/
 
 }
  ?>
@@ -215,21 +210,32 @@ $conn->close();
 
     <div id="rightPart">
       <div id="answerBlock">
-          <div id="finalRecord1">Antwoord: </div>
-          <div id="finalRecord2">Antwoord: </div>
-          <div id="finalRecord3">Antwoord: </div>
-          <div id="finalRecord4">Antwoord: </div>
-          <div id="finalRecord5">Antwoord: </div>
+        <form id="form" action="index.php" method="POST">
+          <!--<input type="hidden" value="" name="answer1">
+          <input type="hidden" value="" name="answer2">
+          <input type="hidden" value="" name="answer3">
+          <input type="hidden" value="" name="answer4">
+          <input type="hidden" value="" name="answer5">-->
 
           <div class="answerPart">
-            <p  class="answerText" >
-              <a href='index.php' class="answerText" id="answerInner2">Continue</a>
-            </p>
-          </div>
+          <p  class="answerText" >
+            <input type="submit" class="answerText" id="answerInner2" value="Verstuur">
+          </p>
+        </div>
 
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3"></p>
-          </div>-->
+        </form>
+
+        <!--<div id="finalRecord1">Antwoord: </div>
+        <div id="finalRecord2">Antwoord: </div>
+        <div id="finalRecord3">Antwoord: </div>
+        <div id="finalRecord4">Antwoord: </div>
+        <div id="finalRecord5">Antwoord: </div>-->
+
+        
+
+        <!--<div class="answerPart">
+          <p class="answerText" id="answerInner3"></p>
+        </div>-->
 
       </div>
     </div>
