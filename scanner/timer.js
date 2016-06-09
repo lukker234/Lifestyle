@@ -1,24 +1,15 @@
 console.log("hallo");
-var timer = 0,
-    timerInterval,
-    button = document.getElementById("button");
 
-var afdruk = document.getElementById("fingerprint");
-
-button.addEventListener("mousedown", function() {
-  timerInterval = setInterval(function(){
-    timer += 1;
-    console.log(timer);
-    if(timer == "2"){
-      
-    }
-  }, 1000);
-});
-
-button.addEventListener("mouseup", function() {
-  clearInterval(timerInterval);
-  timer = 0;
-});
+$(window).mousedown(function(e) {
+    clearTimeout(this.downTimer);
+    this.downTimer = setTimeout(function() {
+        // alert('mousedown > 2 sec');
+        $( "#scanfinger" ).fadeOut( "slow", function() {});
+        $( "#finger" ).fadeIn( "slow", function() {});
+    }, 2000); 
+}).mouseup(function(e) {
+    clearTimeout(this.downTimer); 
+})
 
 
 

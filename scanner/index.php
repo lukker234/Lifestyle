@@ -15,15 +15,17 @@
 	<body>
 
 		<div align="center" id="scanfinger" class=" finger-scan embed-responsive embed-responsive-16by9 center-vid">
-		    <video autoplay loop class="embed-responsive-item">
+		    <video autoplay loop class="embed-responsive-item" style="width:100%;">
 		        <source src="video/finger-scan-loading.mp4" type="video/mp4">
 		    </video>
 		</div>
 		<h4 style="margin-top: 20%; width: 80%; margin-left: 10%;">Place finger below</h4>
 		<button id="button_click"></button>
 
+		<img src="img/fingerprint.png" id="finger">
 
 		<!-- Bootstrap JavaScript -->
+		<script type="text/javascript" src="timer.js"></script>
 		<script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	</body>
