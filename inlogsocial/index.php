@@ -16,17 +16,17 @@
 		<img style="width: 100%; position: absolute;" src="img/scanveld.png">
 
 		<div class="imagespersonal">
-			<img src="img/profilePlaceholder.png">
+			<img class="img-circle" src="img/lorenzo.jpg">
 			<img src="img/fingerPlaceholder.png">
 		</div>
-		<p class="Textpersonal">Name  :  John Janssen</p>
-		<p class="Textpersonal" style="margin-left: 1000px; margin-top: 300px; font-size: 40px;">95 KG</p>
+		<p class="Textpersonal">Name  :  Lorenzo Gerbi</p>
+		<p class="Textpersonal" style="margin-left: 1000px; margin-top: 300px; font-size: 40px;">85 KG</p>
 
-		<p class="agepersonal">Age  :  43</p>
-		<p class="relpersonal">Relationship  :  Single</p>
-		<p class="woonpersonal">City  :  Eindhoven</p>
-		<p class="edupersonal">Education  :  Fontys</p>
-		<p class="friendpersonal">Friends  :  275</p>
+		<p class="agepersonal">Age  :  28</p>
+		<p class="relpersonal">Relationship  :  Unknown</p>
+		<p class="woonpersonal"><br>City  :  Rome</p>
+		<p class="edupersonal">Education  :  IT Development</p>
+		<p class="friendpersonal">Friends  :  404</p>
 		<p class="ideopersonal">Ideology  :  D66</p>
 
 

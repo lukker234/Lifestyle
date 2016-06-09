@@ -1,3 +1,20 @@
+<?php 
+$answer1 = "";
+$answer2 = "";
+$answer3 = "";
+$answer4 = "";
+$answer5 = "";
+
+if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer3']) && isset($_POST['answer4'])) && isset($_POST['answer5']){
+  $value1 = $_POST['answer1'];
+  $value2 = $_POST['answer2'];
+  $value3 = $_POST['answer3'];
+  $value4 = $_POST['answer4'];
+  $value5 = $_POST['answer5'];
+
+  $sql = "INSERT INTO table_name VALUES ($value1,$value2,$value3,$value4,$value5)"
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,8 +34,8 @@
 <body>  
   <div id="q1">
     <div id="questionBlock">
-      <h1>Question 1</h1>
-      <h2>Vond het u het proces van een paspoort aanvragen prettig?</h2>
+      <h1>Question 1 </h1>
+      <h2>Wat vind u van het proces voor het aanvragen van een paspoort?</h2>
     </div>
 
     <div id="leftPart">
@@ -31,16 +48,18 @@
     <div id="rightPart">
       <div id="answerBlock">
           <div class="answerPart">
-            <p class="answerText" id="answerInner1">Ja</p>
+            <p class="answerText" id="answerInner1">Goed</p>
           </div>
 
           <div class="answerPart">
-            <p class="answerText" id="answerInner2">Nee</p>
+            <p class="answerText" id="answerInner2">Slecht</p>
           </div>
 
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3"></p>
-          </div>-->
+          <div class="answerPart">
+            <p class="answerText" id="answerInner3">Neutraal</p>
+          </div>
+
+          
 
       </div>
     </div>
@@ -49,7 +68,7 @@
   <div hidden id="q2">
     <div id="questionBlock">
       <h1><span id='answer1'></span></h1>
-      <h2>Bent u tevreden met het paspoort dat u heeft gekregen?</h2>
+      <h2>Wat vind u van de consequenties van het verkregen paspoort?</h2>
     </div>
 
     <div id="leftPart">
@@ -62,16 +81,16 @@
     <div id="rightPart">
       <div id="answerBlock">
           <div class="answerPart">
-            <p class="answerText" id="answerInner1">Ja</p>
+            <p class="answerText" id="answerInner1">Te streng</p>
           </div>
 
           <div class="answerPart">
-            <p class="answerText" id="answerInner2">Nee</p>
+            <p class="answerText" id="answerInner2">Precies goed</p>
           </div>
 
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3"></p>
-          </div>-->
+          <div class="answerPart">
+            <p class="answerText" id="answerInner3">Niet streng</p>
+          </div>
 
       </div>
     </div>
@@ -80,7 +99,7 @@
   <div hidden id="q3">
     <div id="questionBlock">
       <h1> </h1>
-      <h2>Denkt u dat er een selectieproces was voor dit paspoort?</h2>
+      <h2>Wat vind u ervan dat de overheid uw data zo kan gebruiken?</h2>
     </div>
 
     <div id="leftPart">
@@ -93,16 +112,16 @@
     <div id="rightPart">
       <div id="answerBlock">
           <div class="answerPart">
-            <p class="answerText" id="answerInner1">Ja</p>
+            <p class="answerText" id="answerInner1">Eerlijk</p>
           </div>
 
           <div class="answerPart">
-            <p class="answerText" id="answerInner2">Nee</p>
+            <p class="answerText" id="answerInner2">Oneerlijk</p>
           </div>
 
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3">!</p>
-          </div>-->
+          <div class="answerPart">
+            <p class="answerText" id="answerInner3">Neutraal</p>
+          </div>
 
       </div>
     </div>
@@ -111,7 +130,7 @@
   <div hidden id="q4">
     <div id="questionBlock">
       <h1> </h1>
-      <h2>Waren er dingen die u opvielen?</h2>
+      <h2>Wat is uw standpunt omtrent dit proces van paspoort aanvragen?</h2>
     </div>
 
     <div id="leftPart">
@@ -124,16 +143,8 @@
     <div id="rightPart">
       <div id="answerBlock">
           <div class="answerPart">
-            <p class="answerText" id="answerInner1">Ja</p>
+            <textarea class="answerText answerInner4 " id="answerInner4"></textarea>
           </div>
-
-          <div class="answerPart">
-            <p class="answerText" id="answerInner2">Nee</p>
-          </div>
-
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3"></p>
-          </div>-->
 
       </div>
     </div>
@@ -142,131 +153,7 @@
   <div hidden id="q5">
     <div id="questionBlock">
       <h1> </h1>
-      <h2>Vind u het eerlijk dat u dit paspoort heeft gekregen?</h2>
-    </div>
-
-    <div id="leftPart">
-      <div id="profilePic" class="img-rounded"></div>
-
-      <div id="fingerPic" class="img-rounded"></div>
-    </div>
-
-
-    <div id="rightPart">
-      <div id="answerBlock">
-          <div class="answerPart">
-            <p class="answerText" id="answerInner1">Ja</p>
-          </div>
-
-          <div class="answerPart">
-            <p class="answerText" id="answerInner2">Nee</p>
-          </div>
-
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3"></p>
-          </div>-->
-
-      </div>
-    </div>
-  </div>
-
-  <div hidden id="q6">
-    <div id="questionBlock">
-      <h1> </h1>
-      <h2>Is deze data grotendeels correct?</h2>
-    </div>
-
-    <div id="leftPart">
-      <div id="profilePic" class="img-rounded"></div>
-
-      <div id="fingerPic" class="img-rounded"></div>
-    </div>
-
-
-    <div id="rightPart">
-      <div id="answerBlock">
-          <div class="answerPart">
-            <p class="answerText" id="answerInner1">Ja</p>
-          </div>
-
-          <div class="answerPart">
-            <p class="answerText" id="answerInner2">Nee</p>
-          </div>
-
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3"></p>
-          </div>-->
-
-      </div>
-    </div>
-  </div>
-
-  <div hidden id="q7">
-    <div id="questionBlock">
-      <h1> </h1>
-      <h2>Vind u het goed als de overheid uw persoonlijke data kan gebruiken?</h2>
-    </div>
-
-    <div id="leftPart">
-      <div id="profilePic" class="img-rounded"></div>
-
-      <div id="fingerPic" class="img-rounded"></div>
-    </div>
-
-
-    <div id="rightPart">
-      <div id="answerBlock">
-          <div class="answerPart">
-            <p class="answerText" id="answerInner1">Ja</p>
-          </div>
-
-          <div class="answerPart">
-            <p class="answerText" id="answerInner2">Nee</p>
-          </div>
-
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3"></p>
-          </div>-->
-
-      </div>
-    </div>
-  </div>
-
-  <div hidden id="q8">
-    <div id="questionBlock">
-      <h1> </h1>
-      <h2>Zou u een voorstander zijn van dit proces omtrent paspoort aanvragen?</h2>
-    </div>
-
-    <div id="leftPart">
-      <div id="profilePic" class="img-rounded"></div>
-
-      <div id="fingerPic" class="img-rounded"></div>
-    </div>
-
-
-    <div id="rightPart">
-      <div id="answerBlock">
-          <div class="answerPart">
-            <p class="answerText" id="answerInner1">Ja</p>
-          </div>
-
-          <div class="answerPart">
-            <p class="answerText" id="answerInner2">Nee</p>
-          </div>
-
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3"></p>
-          </div>-->
-
-      </div>
-    </div>
-  </div>
-
-  <div hidden id="q9">
-    <div id="questionBlock">
-      <h1> </h1>
-      <h2>Heeft u verdere opmerkingen of dingen die u kwijt wil?</h2>
+      <h2>Zijn er dingen opgevallen, zo ja? Welke ?</h2>
     </div>
 
     <div id="leftPart">
@@ -317,6 +204,10 @@
           <div id="finalRecord7"></div>
           <div id="finalRecord8"></div>
           <div id="finalRecord9"></div>
+
+          <div class="answerPart">
+            <a href='index.php' class="answerText" id="answerInner2">Continue</a>
+          </div>
 
           <!--<div class="answerPart">
             <p class="answerText" id="answerInner3"></p>

@@ -48,7 +48,7 @@ body{
 #rightPart{
 	width: 60%; min-height: 200px;
 	float: left;
-	margin-top: 50px;
+	/*margin-top: 50px;*/
 }
 
 
@@ -86,6 +86,18 @@ body{
 .answerText{
 	padding-left: 60px;
 	padding-top: 32px;
+}
+.answerInner4{
+	width: 80%; 
+	margin-bottom: 16px;
+	background-image: url(../img/border.png);
+	background-repeat: no-repeat;
+	background-size: contain;
+
+	color: #78818a;
+
+	background-color: transparent;
+	height: 160px;
 }
 #q2{
 	display: none;

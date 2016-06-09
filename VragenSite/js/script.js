@@ -3,20 +3,13 @@ var answer2;
 var answer3;
 var answer4;
 var answer5;
-var answer6;
-var answer7;
-var answer8;
-var answer9;
 
 var question1;
 var question2;
 var question3;
 var question4;
 var question5;
-var question6;
-var question7;
-var question8;
-var question9;
+
 
 $( document ).ready(function() {
 	console.log("JS Connected");
@@ -97,62 +90,6 @@ $( document ).ready(function() {
 
     $( "#q5" ).delay( 500 ).fadeOut( "slow", function() {});
 
-    $("#q6 h1").append("Question 6");
-    $( "#q6" ).delay( 1500 ).fadeIn(  "slow", function() {});
-  });
-
-  $( "#q6 .answerPart" ).click(function(){
-    console.log("Clicked");
-    console.log($("#q6 h2").text());
-    console.log($(this).text());
-
-    question6 = $("#q6 h2").text();
-    answer6 =   $(this).text();
-
-    $( "#q6" ).delay( 500 ).fadeOut( "slow", function() {});
-
-    $("#q7 h1").append("Question 7");
-    $( "#q7" ).delay( 1500 ).fadeIn(  "slow", function() {});
-  });
-
-  $( "#q7 .answerPart" ).click(function(){
-    console.log("Clicked");
-    console.log($("#q7 h2").text());
-    console.log($(this).text());
-
-    question7 = $("#q7 h2").text();
-    answer7 =   $(this).text();
-
-    $( "#q7" ).delay( 500 ).fadeOut( "slow", function() {});
-
-    $("#q8 h1").append("Question 8");
-    $( "#q8" ).delay( 1500 ).fadeIn(  "slow", function() {});
-  });
-
-  $( "#q8 .answerPart" ).click(function(){
-    console.log("Clicked");
-    console.log($("#q8 h2").text());
-    console.log($(this).text());
-
-    question8 = $("#q8 h2").text();
-    answer8 =   $(this).text();
-
-    $( "#q8" ).delay( 500 ).fadeOut( "slow", function() {});
-
-    $("#q9 h1").append("Question 9");
-    $( "#q9" ).delay( 1500 ).fadeIn(  "slow", function() {});
-  });
-
-  $( "#q9 .answerPart" ).click(function(){
-    console.log("Clicked");
-    console.log($("#q9 h2").text());
-    console.log($(this).text());
-
-    question9 = $("#q9 h2").text();
-    answer9 =   $(this).text();
-
-    $( "#q9" ).delay( 500 ).fadeOut( "slow", function() {});
-
     $("#q10 h1").append("Done");
     $( "#q10" ).delay( 1500 ).fadeIn(  "slow", function() {});
 
@@ -160,14 +97,11 @@ $( document ).ready(function() {
     $("#finalRecord2").append(answer2);
     $("#finalRecord3").append(answer3);
     $("#finalRecord4").append(answer4);
-
     $("#finalRecord5").append(answer5);
-    $("#finalRecord6").append(answer6);
-    $("#finalRecord7").append(answer7);
-    $("#finalRecord8").append(answer8);
 
-    $("#finalRecord9").append(answer9);
+    $.post("index.php" , {question: question1, answer: answer1} ,function(data){
+        alert( "Data Loaded: " + data );
+    });
+
   });
-
-
 });
