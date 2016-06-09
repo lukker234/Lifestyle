@@ -38,11 +38,11 @@ width: 80%;
     top: 0;
     height: 200px;
     height: 60%;
-    /* width: 200px; */
-    /* height: 20px; */
     background-color: transparent;
     border: none;
 }
+
+button:focus {outline:0;}
 
 #scanveld{
 	width: 70%;
