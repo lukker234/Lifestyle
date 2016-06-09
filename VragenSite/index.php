@@ -5,14 +5,35 @@ $answer3 = "";
 $answer4 = "";
 $answer5 = "";
 
-if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer3']) && isset($_POST['answer4'])) && isset($_POST['answer5']){
+if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer3']) && isset($_POST['answer4']) && isset($_POST['answer5'])){
   $value1 = $_POST['answer1'];
   $value2 = $_POST['answer2'];
   $value3 = $_POST['answer3'];
   $value4 = $_POST['answer4'];
   $value5 = $_POST['answer5'];
 
-  $sql = "INSERT INTO table_name VALUES ($value1,$value2,$value3,$value4,$value5)"
+  $servername = "localhost";
+  $username = "username";
+  $password = "password";
+  $dbname = "myDB";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "INSERT INTO table_name VALUES (UserId, $value1, $value2, $value3, $value4, $value5)";
+
+if ($conn->query($sql) === TRUE) {
+    echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+
 }
  ?>
 <!DOCTYPE html>
@@ -142,8 +163,11 @@ if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer
 
     <div id="rightPart">
       <div id="answerBlock">
+          <div class="">
+            <textarea class="answerInner4 " id="answerInner4"></textarea>
+          </div>
           <div class="answerPart">
-            <textarea class="answerText answerInner4 " id="answerInner4"></textarea>
+            <p class="answerText" id="answerInner1">Volgende</p>
           </div>
 
       </div>
@@ -165,17 +189,12 @@ if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer
 
     <div id="rightPart">
       <div id="answerBlock">
-          <div class="answerPart">
-            <p class="answerText" id="answerInner1">Ja</p>
+          <div class="">
+            <textarea class="answerInner4 " id="answerInner5"></textarea>
           </div>
-
           <div class="answerPart">
-            <p class="answerText" id="answerInner2">Nee</p>
+            <p class="answerText" id="answerInner1">Volgende</p>
           </div>
-
-          <!--<div class="answerPart">
-            <p class="answerText" id="answerInner3"></p>
-          </div>-->
 
       </div>
     </div>
@@ -184,6 +203,7 @@ if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer
   <div hidden id="q10">
     <div id="questionBlock">
       <h1> </h1>
+      <h2>Dank u voor uw participatie</h2>
     </div>
 
     <div id="leftPart">
@@ -195,18 +215,16 @@ if (isset($_POST['answer1']) && isset($_POST['answer2']) && isset($_POST['answer
 
     <div id="rightPart">
       <div id="answerBlock">
-          <div id="finalRecord1"></div>
-          <div id="finalRecord2"></div>
-          <div id="finalRecord3"></div>
-          <div id="finalRecord4"></div>
-          <div id="finalRecord5"></div>
-          <div id="finalRecord6"></div>
-          <div id="finalRecord7"></div>
-          <div id="finalRecord8"></div>
-          <div id="finalRecord9"></div>
+          <div id="finalRecord1">Antwoord: </div>
+          <div id="finalRecord2">Antwoord: </div>
+          <div id="finalRecord3">Antwoord: </div>
+          <div id="finalRecord4">Antwoord: </div>
+          <div id="finalRecord5">Antwoord: </div>
 
           <div class="answerPart">
-            <a href='index.php' class="answerText" id="answerInner2">Continue</a>
+            <p  class="answerText" >
+              <a href='index.php' class="answerText" id="answerInner2">Continue</a>
+            </p>
           </div>
 
           <!--<div class="answerPart">

@@ -72,7 +72,7 @@ $( document ).ready(function() {
     console.log($(this).text());
 
     question4 = $("#q4 h2").text();
-    answer4 =   $(this).text();
+    answer4 =   $("#answerInner4").val();
 
     $( "#q4" ).delay( 500 ).fadeOut( "slow", function() {});
 
@@ -86,11 +86,11 @@ $( document ).ready(function() {
     console.log($(this).text());
 
     question5 = $("#q5 h2").text();
-    answer5 =   $(this).text();
+    answer5 =   $("#answerInner5").val();
 
     $( "#q5" ).delay( 500 ).fadeOut( "slow", function() {});
 
-    $("#q10 h1").append("Done");
+    $("#q10 h1").append("Klaar");
     $( "#q10" ).delay( 1500 ).fadeIn(  "slow", function() {});
 
     $("#finalRecord1").append(answer1);
@@ -99,9 +99,9 @@ $( document ).ready(function() {
     $("#finalRecord4").append(answer4);
     $("#finalRecord5").append(answer5);
 
-    $.post("index.php" , {question: question1, answer: answer1} ,function(data){
+    /*$.post("index.php" , {question: question1, answer: answer1} ,function(data){
         alert( "Data Loaded: " + data );
-    });
+    });*/
 
   });
 });
