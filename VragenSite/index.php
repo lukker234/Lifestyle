@@ -226,7 +226,7 @@ $conn->close();
 
           <div class="answerPart">
           <p  class="answerText" >
-            <input type="submit" class="answerText" id="answerInner2" value="Verstuur">
+            <input type="submit" style="background-color:transparent; border:transparent;" class="answerText" id="answerInner2" value="Verstuur">
           </p>
         </div>
 
