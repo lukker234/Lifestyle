@@ -1,3 +1,6 @@
+<?php 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="">
 	<head>
@@ -12,7 +15,7 @@
 		<!-- Bootstrap CSS -->
 		<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	</head>
-	<body>
+	<body oncontextmenu="return false;">
 
 		<div align="center" id="scanfinger" class=" finger-scan embed-responsive embed-responsive-16by9 center-vid">
 		    <video autoplay loop class="embed-responsive-item" style="width:100%;">
@@ -26,6 +29,7 @@
 
 		<!-- Bootstrap JavaScript -->
 		<script type="text/javascript" src="timer.js"></script>
+
 		<script src="js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 	</body>
