@@ -1,6 +1,11 @@
 <?php
 	session_start();
 
+	//UserCheck variables
+	$setUsername = "";
+	$fileUserName = "";
+
+	//DB Variables
   	$servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -13,31 +18,32 @@
 	    die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "SELECT * FROM fingercheck WHERE value = 'true'";
+	if (isset($_GET['fingerCheck'])) {
+		$sql = "SELECT * FROM fingercheck WHERE value = 'true'";
 
-	$result = $conn->query($sql);
+		$result = $conn->query($sql);
 
-	if ($result->num_rows > 0) {
-		// output data of each row
-		echo '1';
-	} 
-	else 
-	{
-		echo "0";
+		if ($result->num_rows > 0) {
+			// output data of each row
+			echo '1';
+		} 
+		else 
+		{
+			echo "0";
+		}
 	}
 
 	if (isset($_GET['userCheck'])) {
 
-		$setUsername;
-		$fileUserName;
+		$sql = "SELECT `value` FROM fingerCheck WHERE fingerCheckId = '2'";
 
-		$sql = "SELECT * FROM lifestyle";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
 		    // output data of each row
 		    while($row = $result->fetch_assoc()) {
 		       	$setUsername= $row["value"];
+		       	//echo $setUsername;
 		    }
 		}
 	
@@ -46,24 +52,28 @@
 		fclose($myfile);
 
 		if (preg_match('/first_name":"(.*)","last_name/', $data, $matches1)) {
-		    // echo $matches1[1]."<br />"; 
 			if (preg_match('/last_name":"(.*)","link/', $data, $matches15)) {
 				$fileUserName = $matches1[1]." ".$matches15[1];
+				//echo $fileUserName;
 			}
 		}
 
-		if ($fileUserName !=== $setUsername) {
-			echo "true";
-
-			$sql3 = "UPDATE fingercheck SET value=$fileUserName WHERE fingerCheckId = 2";
+		if ($fileUserName != $setUsername) {
+			echo "userCompare true";
+			$sql3 = "UPDATE fingerCheck SET value = '$fileUserName' WHERE fingerCheckId = '2'";
 
 			if ($conn->query($sql3) === TRUE) {
 			    //echo "Record updated successfully";
 			} else {
 			    //echo "Error updating record: " . $conn->error;
 			}
+		} else {
+			echo "userCompare false";
 		}
 	}
+
+
+
 
 	if (isset($_GET['setValue'])) {
 
