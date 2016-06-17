@@ -35,11 +35,11 @@ function poll(){
 			if (data == "userCompare false")
 			{ 
 				console.log(data + "userCompare False");
-				//window.location.href = "inlogsocial/";
+				window.location.href = "index.php";
 			};
 	   	});
 
-	   	$("#fingerprint").delay(3000).fadeIn("slow", function(){
+	   	$("#fingerprint").delay(100).fadeIn("slow", function(){
 	   		if (userCompare = 'userCompare true') {
 		   		$( "#videobg2" ).delay( 3000 ).fadeOut( "slow", function() {
 		   			$( "#fingerprint" ).fadeOut( "slow", function() {});
