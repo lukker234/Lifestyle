@@ -30,7 +30,6 @@ function poll(){
 	   			window.location.href = "inlogsocial/";
 	   		});
 	   	});
-
 	};
 };
 setInterval(poll, 5000);

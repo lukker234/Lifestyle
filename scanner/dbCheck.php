@@ -26,6 +26,45 @@
 		echo "0";
 	}
 
+	if (isset($_GET['userCheck'])) {
+
+		$setUsername;
+		$fileUserName;
+
+		$sql = "SELECT * FROM lifestyle";
+		$result = $conn->query($sql);
+
+		if ($result->num_rows > 0) {
+		    // output data of each row
+		    while($row = $result->fetch_assoc()) {
+		       	$setUsername= $row["value"];
+		    }
+		}
+	
+		$myfile = fopen("../inlogsocial/userdata.txt", "r") or die("Unable to open file!");
+		$data =  fread($myfile,filesize("../inlogsocial/userdata.txt"));
+		fclose($myfile);
+
+		if (preg_match('/first_name":"(.*)","last_name/', $data, $matches1)) {
+		    // echo $matches1[1]."<br />"; 
+			if (preg_match('/last_name":"(.*)","link/', $data, $matches15)) {
+				$fileUserName = $matches1[1]." ".$matches15[1];
+			}
+		}
+
+		if ($fileUserName !=== $setUsername) {
+			echo "true";
+
+			$sql3 = "UPDATE fingercheck SET value=$fileUserName WHERE fingerCheckId = 2";
+
+			if ($conn->query($sql3) === TRUE) {
+			    //echo "Record updated successfully";
+			} else {
+			    //echo "Error updating record: " . $conn->error;
+			}
+		}
+	}
+
 	if (isset($_GET['setValue'])) {
 
 		$sql2 = "UPDATE fingercheck SET value='true' WHERE fingerCheckId = 1";
