@@ -27,6 +27,18 @@
 	}
 
 	if (isset($_GET['setValue'])) {
+
+		$sql2 = "UPDATE fingercheck SET value='true' WHERE fingerCheckId = 1";
+
+		if ($conn->query($sql2) === TRUE) {
+		    //echo "Record updated successfully";
+		} else {
+		    //echo "Error updating record: " . $conn->error;
+		}
+	}
+
+	if (isset($_GET['setValueFalse'])) {
+		
 		$sql2 = "UPDATE fingercheck SET value='false' WHERE fingerCheckId = 1";
 
 		if ($conn->query($sql2) === TRUE) {
