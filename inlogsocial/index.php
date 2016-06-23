@@ -1,3 +1,28 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "lifestyle";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$lastUser = "";
+$matches1;
+$matches2;
+$matches3;
+$matches4;
+$matches5;
+$matches6;
+$matches7;
+$matches15;
+
+?>
+
 <!DOCTYPE html>
 <html lang="">
 	<head>
@@ -16,7 +41,7 @@
  		<img style="width: 100%; position: absolute;" src="img/scanveld.png">
 
 		<div class="imagespersonal">
-			<img class="img-circle" src="img/lorenzo.jpg">
+			<img class="img-circle" src="img/profilePlaceholder.png">
 			<img src="img/fingerPlaceholder.png">
 		</div>
 		<?php
@@ -64,6 +89,37 @@ if (preg_match('/political":(.*)}/', $data, $matches4)) {
     }
 }
 
+$databasevalue1 = $matches1[1];
+$databasevalue2 = $matches15[1];
+$databasevalue3 = $matches2[1];
+$databasevalue4 = $matches3[1];
+$databasevalue5 = $matches4[1];
+
+
+$sqlCheck = "SELECT * FROM user ORDER BY userId DESC LIMIT 1";
+$result = $conn->query($sqlCheck);
+
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        $lastUser = $row["firstname"];
+        //echo $lastUser;
+    }
+}
+
+if ($databasevalue1 != $lastUser) {
+
+	$sqlUser = "INSERT INTO `user` (firstname, lastname, gender, city, political)
+	VALUES ('$databasevalue1', '$databasevalue2' ,'$databasevalue3', '$databasevalue4', '$databasevalue5')";
+
+	if ($conn->query($sqlUser) === TRUE) {
+	    //echo "New record created successfully";
+	} else {
+	    echo "Error: " . $sqlUser . "<br>" . $conn->error;
+	}
+}
+
+$conn->close();
 ?>
 
 <!-- 		<p class="Textpersonal">Name  :  Lorenzo Gerbi</p>
