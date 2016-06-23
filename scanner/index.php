@@ -19,7 +19,7 @@ session_start();
 
 		<div align="center" id="scanfinger" class=" finger-scan embed-responsive embed-responsive-16by9 center-vid">
 		    <video autoplay loop class="embed-responsive-item" style="width:100%;">
-		        <source src="video/finger-scan-loading.webm" type="video/webm">
+		        <source src="video/finger-scan-loading.mp4" type="video/mp4">
 		    </video>
 		</div>
 		<h4 style="margin-top: 20%; width: 80%; margin-left: 10%;">Place finger below</h4>
