@@ -3,6 +3,7 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<title>WebcamJS Test Page</title>
 	<style type="text/css">
 		body { font-family: Helvetica, sans-serif; }
@@ -106,6 +107,19 @@
 					'<img src="'+data_uri+'"/><br/></br>' + 
 					'<a href="'+data_uri+'" target="_blank">Open image in new window...</a>';
 					console.log(data_uri);
+					// myJavascriptFunction();
+					// function myJavascriptFunction() { 
+					//   window.location.href = "sendtodatabase.php?link=" + data_uri; 
+					// }
+
+					$.ajax({
+					    data: 'link=' + data_uri,
+					    url: 'sendtodatabase.php',
+					    method: 'POST', // or GET
+					    success: function(msg) {
+					        alert(msg);
+					    }
+					});
 				// shut down camera, stop capturing
 				Webcam.reset();
 				
