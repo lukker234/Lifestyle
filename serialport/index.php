@@ -8,7 +8,7 @@
 
     port.attachEvent('CommEvent', CommEventHandler); //CommEventHandler will handle serial port events
 
-    port.Port=7; //Please check what the port number is correct!!
+    port.Port=3; //Please check what the port number is correct!!
     port.BaudRate=9600;
     port.DataBits=8;
     port.Parity=0; //NOPARITY
