@@ -97,6 +97,7 @@
 		}
 		
 		function save_photo() {
+
 			// actually snap photo (from preview freeze) and display it
 			Webcam.snap( function(data_uri) {
 				// display results in page
@@ -104,7 +105,6 @@
 					'<h2>Here is your large, cropped image:</h2>' + 
 					'<img src="'+data_uri+'"/><br/></br>' + 
 					'<a href="'+data_uri+'" target="_blank">Open image in new window...</a>';
-				
 				// shut down camera, stop capturing
 				Webcam.reset();
 				
