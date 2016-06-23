@@ -45,39 +45,36 @@ $matches15;
 			<img src="img/fingerPlaceholder.png">
 		</div>
 		<?php
-
-$myfile = fopen("userdata.txt", "r") or die("Unable to open file!");
-$data =  fread($myfile,filesize("userdata.txt"));
+$bestand = "userdata.txt";
+$myfile = fopen($bestand, "r") or die("Unable to open file!");
+$data =  fread($myfile,filesize($bestand));
 fclose($myfile);
+
+
 
 if (preg_match('/first_name":"(.*)","last_name/', $data, $matches1)) {
     // echo $matches1[1]."<br />"; 
-	if (preg_match('/last_name":"(.*)","link/', $data, $matches15)) {
+	if (preg_match('/last_name":"(.*)","gender/', $data, $matches15)) {
 		echo '<p class="Textpersonal">Name  :  '.$matches1[1]." ".$matches15[1].'</p>';
 	}
 }
 
-if (preg_match('/gender":"(.*)","locale/', $data, $matches2)) {
+if (preg_match('/gender":"(.*)","link/', $data, $matches2)) {
     // echo $matches1[1]."<br />"; 
     
-    echo '<p class="friendpersonal">Gender  :  '.$matches2[1].'</p>';
+    echo '<p class="genderpersonal">Gender  :  '.$matches2[1].'</p>';
 }
 
-if (preg_match('/locale":"(.*)","religion/', $data, $matches3)) {
-    // echo $matches1[1]."<br />"; 
-    
-    echo '<p class="woonpersonal"><br>City  :  '.$matches3[1].'</p>';
-}
-
-if (preg_match('/locale":"(.*)","religion/', $data, $matches3)) {
+if (preg_match('/"name":"(.*)"},/', $data, $matches3)) {
     // echo $matches1[1]."<br />"; 
     
     echo '<p class="woonpersonal"><br>City  :  '.$matches3[1].'</p>';
 }
 
-if (preg_match('/political":"(.*)}/', $data, $matches4)) {
+if (preg_match('/"birthday":"(.*)","hometown"/', $data, $matches4)) {
     // echo $matches1[1]."<br />"; 
-    echo '<p class="woonpersonal"><br>City  :  '.$matches4[1].'</p>';
+    
+    echo '<p class="agepersonal"><br>Birthday  :  '.$matches4[1].'</p>';
 }
 
 if (preg_match('/political":(.*)}/', $data, $matches4)) {
@@ -85,7 +82,7 @@ if (preg_match('/political":(.*)}/', $data, $matches4)) {
     if($matches4[1] == "null"){
     	echo '<p class="ideopersonal" style="color:red;">Ideology  : No data</p>';
     }else{
-    	 echo '<p class="ideopersonal">Ideology  :  '.$matches4[1].'</p>';
+    	 echo '<p class="ideopersonal">Ideology  :  '.$matches5[1].'</p>';
     }
 }
 
@@ -110,7 +107,7 @@ if ($result->num_rows > 0) {
 if ($databasevalue1 != $lastUser) {
 
 	$sqlUser = "INSERT INTO `user` (firstname, lastname, gender, city, political)
-	VALUES ('$databasevalue1', '$databasevalue2' ,'$databasevalue3', '$databasevalue4', '$databasevalue5')";
+	VALUES ('$databasevalue1', '$databasevalue15' ,'$databasevalue2', '$databasevalue3', '$databasevalue5')";
 
 	if ($conn->query($sqlUser) === TRUE) {
 	    //echo "New record created successfully";
