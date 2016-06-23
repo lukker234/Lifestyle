@@ -1,1 +1,0 @@
-﻿{"id":"1612472519043227","first_name":"Daniel","last_name":"Richtersz","link":"https://www.facebook.com/app_scoped_user_id/1612472519043227/","username":null,"gender":"male","locale":"nl_NL","religion":null,"political":null}
