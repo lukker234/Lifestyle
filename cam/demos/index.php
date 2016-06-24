@@ -120,7 +120,7 @@ var canvas = document.getElementById("foto"), ctx = canvas.getContext("2d");
 console.log(canvas);
 // draw to canvas...
 canvas.toBlob(function(blob) {
-    saveAs(blob, "pretty image.png");
+    saveAs(blob, "Paspoort.png");
 });
 
 				Webcam.reset();
