@@ -4,12 +4,6 @@ $username = "root";
 $password = "";
 $dbname = "lifestyle";
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 
 $lastUser = "";
 $firstname;
@@ -18,6 +12,8 @@ $city;
 $email;
 $age_file;
 $lastname;
+
+$image = "img/Paspoort.png";
 
 ?>
 
@@ -39,7 +35,7 @@ $lastname;
  		<img style="width: 100%; position: absolute;" src="img/scanveld.png">
 
 		<div class="imagespersonal">
-			<img class="img-circle" src="img/Paspoort.png">
+			<img class="img-circle" src="<?php echo $image; ?>">
 			<img src="img/fingerPlaceholder.png">
 		</div>
 		<?php
@@ -83,6 +79,28 @@ $birthDate = explode("\/", $birthDate);
     : (date("Y") - $birthDate[2]));
   echo "<p class='agepersonal'>Age:" . $age."</p>";
 }
+
+
+
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+$sql = "INSERT INTO user (firstname, lastname, gender, city, email, age, image)
+VALUES ('$firstname[1]', '$lastname[1]', '$gender[1]', '$city[1]', '$email[1]', '$age','$image')";
+
+if ($conn->query($sql) === TRUE) {
+    // echo "New record created successfully";
+} else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+
 
   //date in mm/dd/yyyy format; or it can be in other formats as well
   
