@@ -39,7 +39,7 @@ $lastname;
  		<img style="width: 100%; position: absolute;" src="img/scanveld.png">
 
 		<div class="imagespersonal">
-			<img class="img-circle" src="img/julia.jpg">
+			<img class="img-circle" src="img/Paspoort.png">
 			<img src="img/fingerPlaceholder.png">
 		</div>
 		<?php
