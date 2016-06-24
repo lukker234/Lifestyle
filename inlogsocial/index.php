@@ -12,14 +12,12 @@ if ($conn->connect_error) {
 } 
 
 $lastUser = "";
-$matches1;
-$matches2;
-$matches3;
-$matches4;
-$matches5;
-$matches6;
-$matches7;
-$matches15;
+$firstname;
+$gender;
+$city;
+$email;
+$age_file;
+$lastname;
 
 ?>
 
@@ -41,7 +39,7 @@ $matches15;
  		<img style="width: 100%; position: absolute;" src="img/scanveld.png">
 
 		<div class="imagespersonal">
-			<img class="img-circle" src="img/profilePlaceholder.png">
+			<img class="img-circle" src="img/julia.jpg">
 			<img src="img/fingerPlaceholder.png">
 		</div>
 		<?php
@@ -52,71 +50,87 @@ fclose($myfile);
 
 
 
-if (preg_match('/first_name":"(.*)","last_name/', $data, $matches1)) {
-    // echo $matches1[1]."<br />"; 
-	if (preg_match('/last_name":"(.*)","gender/', $data, $matches15)) {
-		echo '<p class="Textpersonal">Name  :  '.$matches1[1]." ".$matches15[1].'</p>';
+if (preg_match('/first_name":"(.*)","last_name/', $data, $firstname)) {
+	if (preg_match('/last_name":"(.*)","gender/', $data, $lastname)) {
+		echo '<p class="Textpersonal">Name  :  '.$firstname[1]." ".$lastname[1].'</p>';
 	}
 }
 
-if (preg_match('/gender":"(.*)","link/', $data, $matches2)) {
+if (preg_match('/gender":"(.*)","link/', $data, $gender)) {
     // echo $matches1[1]."<br />"; 
     
-    echo '<p class="genderpersonal">Gender  :  '.$matches2[1].'</p>';
+    echo '<p class="genderpersonal">Gender  :  '.$gender[1].'</p>';
 }
 
-if (preg_match('/"name":"(.*)"},/', $data, $matches3)) {
+if (preg_match('/"name":"(.*)"},/', $data, $city)) {
     // echo $matches1[1]."<br />"; 
     
-    echo '<p class="woonpersonal"><br>City  :  '.$matches3[1].'</p>';
+    echo '<p class="woonpersonal"><br>City  :  '.$city[1].'</p>';
 }
 
-if (preg_match('/"birthday":"(.*)","hometown"/', $data, $matches4)) {
+if (preg_match('/"email":"(.*)","birthday"/', $data, $email)) {
     // echo $matches1[1]."<br />"; 
-    
-    echo '<p class="agepersonal"><br>Birthday  :  '.$matches4[1].'</p>';
+    $email_converted = str_replace("\u0040","@",$email[1]);
+    echo '<p class="emailpersonal"><br>Email  :  '.$email_converted.'</p>';
 }
 
-if (preg_match('/political":(.*)}/', $data, $matches4)) {
-    // echo $matches1[1]."<br />"; 
-    if($matches4[1] == "null"){
-    	echo '<p class="ideopersonal" style="color:red;">Ideology  : No data</p>';
-    }else{
-    	 echo '<p class="ideopersonal">Ideology  :  '.$matches5[1].'</p>';
-    }
+if (preg_match('/"birthday":"(.*)","hometown"/', $data, $age_file)) {
+//     // echo $matches1[1]."<br />"; 
+$birthDate = $age_file[1];
+$birthDate = explode("\/", $birthDate);
+  $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+    ? ((date("Y") - $birthDate[2]) - 1)
+    : (date("Y") - $birthDate[2]));
+  echo "<p class='agepersonal'>Age:" . $age."</p>";
 }
 
-$databasevalue1 = $matches1[1];
-$databasevalue2 = $matches15[1];
-$databasevalue3 = $matches2[1];
-$databasevalue4 = $matches3[1];
-$databasevalue5 = $matches4[1];
+  //date in mm/dd/yyyy format; or it can be in other formats as well
+  
+  //explode the date to get month, day and year
+  
+  //get age from date or birthdate
 
 
-$sqlCheck = "SELECT * FROM user ORDER BY userId DESC LIMIT 1";
-$result = $conn->query($sqlCheck);
+// if (preg_match('/political":(.*)}/', $data, $matches5)) {
+//     // echo $matches1[1]."<br />"; 
+//     if($matches5[1] == "null"){
+//     	echo '<p class="ideopersonal" style="color:red;">Ideology  : No data</p>';
+//     }else{
+//     	 echo '<p class="ideopersonal">Ideology  :  '.$matches5[1].'</p>';
+//     }
+// }
 
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-        $lastUser = $row["firstname"];
-        //echo $lastUser;
-    }
-}
+// $databasevalue1 = $matches1[1];
+// $databasevalue2 = $matches15[1];
+// $databasevalue3 = $matches2[1];
+// $databasevalue4 = $matches3[1];
+// $databasevalue5 = $matches4[1];
 
-if ($databasevalue1 != $lastUser) {
 
-	$sqlUser = "INSERT INTO `user` (firstname, lastname, gender, city, political)
-	VALUES ('$databasevalue1', '$databasevalue15' ,'$databasevalue2', '$databasevalue3', '$databasevalue5')";
+// $sqlCheck = "SELECT * FROM user ORDER BY userId DESC LIMIT 1";
+// $result = $conn->query($sqlCheck);
 
-	if ($conn->query($sqlUser) === TRUE) {
-	    //echo "New record created successfully";
-	} else {
-	    echo "Error: " . $sqlUser . "<br>" . $conn->error;
-	}
-}
+// if ($result->num_rows > 0) {
+//     // output data of each row
+//     while($row = $result->fetch_assoc()) {
+//         $lastUser = $row["firstname"];
+//         //echo $lastUser;
+//     }
+// }
 
-$conn->close();
+// if ($databasevalue1 != $lastUser) {
+
+// 	$sqlUser = "INSERT INTO `user` (firstname, lastname, gender, city, political)
+// 	VALUES ('$databasevalue1', '$databasevalue15' ,'$databasevalue2', '$databasevalue3', '$databasevalue5')";
+
+// 	if ($conn->query($sqlUser) === TRUE) {
+// 	    //echo "New record created successfully";
+// 	} else {
+// 	    echo "Error: " . $sqlUser . "<br>" . $conn->error;
+// 	}
+// }
+
+// $conn->close();
 ?>
 
 <!-- 		<p class="Textpersonal">Name  :  Lorenzo Gerbi</p>

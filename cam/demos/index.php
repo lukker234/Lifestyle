@@ -3,7 +3,8 @@
 <html lang="en">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script type="text/javascript" src="../file/FileSaver.js"></script>
+	<script   src="https://code.jquery.com/jquery-3.0.0.js"   integrity="sha256-jrPLZ+8vDxt2FnE1zvZXCkCcebI/C8Dt5xyaQBjxQIo="   crossorigin="anonymous"></script>
 	<title>WebcamJS Test Page</title>
 	<style type="text/css">
 		body { font-family: Helvetica, sans-serif; }
@@ -14,10 +15,6 @@
 	</style>
 </head>
 <body>
-	
-	<h1>WebcamJS Test Page</h1>
-	<h3>Demonstrates all features at once</h3>
-	<div style="margin-top:5px; margin-bottom:20px;">Captures large 480x480 cropped image while displaying live 240x240 preview, flipped horizontally (mirrored), and allows preview before save.</div>
 	
 	<div id="my_photo_booth">
 		<div id="my_camera"></div>
@@ -74,6 +71,11 @@
 		var shutter = new Audio();
 		shutter.autoplay = false;
 		shutter.src = navigator.userAgent.match(/Firefox/) ? 'shutter.ogg' : 'shutter.mp3';
+
+		setTimeout(
+		    function() {
+		    	preview_snapshot();
+		    }, 5000);
 		
 		function preview_snapshot() {
 			// play sound effect
@@ -86,6 +88,7 @@
 			// swap button sets
 			document.getElementById('pre_take_buttons').style.display = 'none';
 			document.getElementById('post_take_buttons').style.display = '';
+			save_photo();
 		}
 		
 		function cancel_preview() {
@@ -106,21 +109,20 @@
 					'<h2>Here is your large, cropped image:</h2>' + 
 					'<img src="'+data_uri+'"/><br/></br>' + 
 					'<a href="'+data_uri+'" target="_blank">Open image in new window...</a>';
-					console.log(data_uri);
+					console.log(results);
 					// myJavascriptFunction();
 					// function myJavascriptFunction() { 
 					//   window.location.href = "sendtodatabase.php?link=" + data_uri; 
 					// }
 
-					$.ajax({
-					    data: 'link=' + data_uri,
-					    url: 'sendtodatabase.php',
-					    method: 'POST', // or GET
-					    success: function(msg) {
-					        alert(msg);
-					    }
-					});
-				// shut down camera, stop capturing
+
+var canvas = document.getElementById("foto"), ctx = canvas.getContext("2d");
+console.log(canvas);
+// draw to canvas...
+canvas.toBlob(function(blob) {
+    saveAs(blob, "pretty image.png");
+});
+
 				Webcam.reset();
 				
 				// show results, hide photo booth
@@ -128,6 +130,7 @@
 				document.getElementById('my_photo_booth').style.display = 'none';
 			} );
 		}
+
 	</script>
 	
 </body>

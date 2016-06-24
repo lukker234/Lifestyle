@@ -449,6 +449,7 @@ var Webcam = {
 		
 		// create canvas for holding preview
 		var preview_canvas = document.createElement('canvas');
+		preview_canvas.id     = "foto";
 		preview_canvas.width = final_width;
 		preview_canvas.height = final_height;
 		var preview_context = preview_canvas.getContext('2d');

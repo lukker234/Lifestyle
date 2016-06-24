@@ -51,5 +51,5 @@ function poll(){
 
 	};
 };
-setInterval(poll, 5000);
+setInterval(poll, 2000);
 
